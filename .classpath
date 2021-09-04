@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" output="target/classes" path="src/main/java">
+		<attributes>
+			<attribute name="optional" value="true"/>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="src" output="target/test-classes" path="src/test/java">
+		<attributes>
+			<attribute name="test" value="true"/>
+			<attribute name="optional" value="true"/>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/ECLIPSE/cucumber files/selenium-server-standalone-3.141.59.jar"/>
+	<classpathentry kind="lib" path="C:/ECLIPSE/cucumber files/junit-4.13.1.jar"/>
+	<classpathentry kind="con" path="org.testng.TESTNG_CONTAINER"/>
+	<classpathentry kind="lib" path="C:/Users/bamid/.m2/repository/info/cukes/cucumber-core/1.2.5/cucumber-core-1.2.5.jar" sourcepath="C:/Users/bamid/.m2/repository/info/cukes/cucumber-core/1.2.5/cucumber-core-1.2.5-sources.jar">
+		<attributes>
+			<attribute name="test" value="true"/>
+			<attribute name="maven.pomderived" value="true"/>
+			<attribute name="maven.groupId" value="info.cukes"/>
+			<attribute name="maven.artifactId" value="cucumber-core"/>
+			<attribute name="maven.version" value="1.2.5"/>
+			<attribute name="maven.scope" value="test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/ECLIPSE/cucumber files/cobertura-1.8.jar"/>
+	<classpathentry kind="lib" path="C:/ECLIPSE/cucumber files/cucumber-core-1.2.5.jar"/>
+	<classpathentry kind="lib" path="C:/ECLIPSE/cucumber files/cucumber-java-1.2.5.jar"/>
+	<classpathentry kind="lib" path="C:/ECLIPSE/cucumber files/cucumber-junit-1.2.5.jar"/>
+	<classpathentry kind="lib" path="C:/ECLIPSE/cucumber files/cucumber-jvm-deps-1.0.5.jar"/>
+	<classpathentry kind="lib" path="C:/ECLIPSE/cucumber files/cucumber-jvm-deps-1.0.6.jar"/>
+	<classpathentry kind="lib" path="C:/ECLIPSE/cucumber files/cucumber-reporting-5.5.0.jar"/>
+	<classpathentry kind="lib" path="C:/ECLIPSE/cucumber files/cucumber-testng-6.9.1.jar"/>
+	<classpathentry kind="lib" path="C:/ECLIPSE/cucumber files/gherkin-2.12.1.jar"/>
+	<classpathentry kind="lib" path="C:/ECLIPSE/cucumber files/gherkin-2.12.2.jar"/>
+	<classpathentry kind="lib" path="C:/ECLIPSE/cucumber files/mockito-all-2.0.2-beta.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="output" path="target/classes"/>
+</classpath>
