@@ -45,15 +45,18 @@ public class GMlogin {
 	}
 	@Then("^user should see the welcome message$")
 	public void user_should_see_the_welcome_message() throws Throwable {
-		driver.findElement(By.className("page-heading")).isDisplayed();
-		driver.findElement(By.className("info-account")).getText();
+		driver.findElement(By.cssSelector(".info-account")).isDisplayed();
+		driver.findElement(By.cssSelector(".page-heading")).isDisplayed();
+		
+		driver.findElement(By.cssSelector(".page-heading")).isDisplayed();
 		
 		try {			
-			String printMyAccount=driver.findElement(By.className("page-heading")).getText();
-			System.out.println("User is on " + printMyAccount + "page");
+			String printMyAccount=driver.findElement(By.cssSelector(".page-heading")).getText();
+			System.out.println("User is on " + printMyAccount + " page");
 			
-			String printWelcomeMessage=driver.findElement(By.className("info-account")).getText();
-			System.out.println("The welcome message is " + printWelcomeMessage);
+			String printWelcomeMessage=driver.findElement(By.cssSelector(".info-account")).getText();
+			System.out.println(printWelcomeMessage);
+			
 			System.out.println("Pass");			
 		}catch(Exception e) {
 			System.out.println("user login failed");

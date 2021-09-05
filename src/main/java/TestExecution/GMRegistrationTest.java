@@ -33,9 +33,11 @@ public class GMRegistrationTest {
 	}
 
 	@When("^user entered emailAddress and click on create an account$")
-	public void user_entered_emailAddress_and_click_on_create_an_account() throws Throwable {
-//		driver.findElement(By.id("email_create")).click();
-	    driver.findElement(By.id("email_create")).sendKeys("bamglobal+17@gmail.com");
+	public void user_entered_emailAddress_and_click_on_create_an_account(DataTable testdata) throws Throwable {
+//		Map<String,String> testDataAsMap=testdata.asMap(String.class, String.class);
+		
+//	    driver.findElement(By.id("email_create")).sendKeys("bamglobal+20@gmail.com");
+		driver.findElement(By.id("email_create")).sendKeys(testDataAsMap.get("emailAddress"));
 	    driver.findElement(By.cssSelector("#SubmitCreate > span")).click();
 	    driver.findElement(By.id("id_gender1")).click();
 	    
@@ -47,37 +49,35 @@ public class GMRegistrationTest {
 				
 		Map<String,String> testDataAsMap=testdata.asMap(String.class, String.class);
 		
-//		driver.findElement(By.id("customer_firstname")).click();
+		driver.findElement(By.id("customer_firstname")).click();
 	    driver.findElement(By.id("customer_firstname")).sendKeys(testDataAsMap.get("FirstName"));
-//	    driver.findElement(By.id("customer_lastname")).click();
+	    driver.findElement(By.id("customer_lastname")).click();
 	    driver.findElement(By.id("customer_lastname")).sendKeys(testDataAsMap.get("LastName"));
 	    driver.findElement(By.id("email")).click();
 	    driver.findElement(By.id("email")).clear();
 	    driver.findElement(By.id("email")).sendKeys(testDataAsMap.get("EMail"));
-//	    driver.findElement(By.id("passwd")).click();
+	    driver.findElement(By.id("passwd")).click();
 	    driver.findElement(By.id("passwd")).sendKeys(testDataAsMap.get("Password"));
 	    driver.findElement(By.id("days")).click();
 	    driver.findElement(By.id("days")).sendKeys(testDataAsMap.get("Day"));	
-	    Thread.sleep(3000);
-	    driver.findElement(By.name("months")).click();	    
-	    driver.findElement(By.name("months")).sendKeys(testDataAsMap.get(" Month"));
-	    Thread.sleep(3000);
-	    driver.findElement(By.id("years")).click(); 
-	    driver.findElement(By.id("years")).sendKeys(testDataAsMap.get("Years")); 
-	    driver.findElement(By.id("company")).click();
-	    driver.findElement(By.id("company")).sendKeys(testDataAsMap.get("company"));
-	    driver.findElement(By.id("address1")).click();
-	    driver.findElement(By.id("address1")).sendKeys(testDataAsMap.get("address1"));
+	    driver.findElement(By.id("months")).click();	
+	    driver.findElement(By.id("months")).sendKeys(testDataAsMap.get("Month"));
+	    driver.findElement(By.name("years")).click(); 
+	    driver.findElement(By.name("years")).sendKeys(testDataAsMap.get("Year")); 
+	    driver.findElement(By.name("company")).click();
+	    driver.findElement(By.name("company")).sendKeys(testDataAsMap.get("Company"));
+	    driver.findElement(By.name("address1")).click();
+	    driver.findElement(By.name("address1")).sendKeys(testDataAsMap.get("Address"));
 	    driver.findElement(By.id("city")).click();
-	    driver.findElement(By.id("city")).sendKeys(testDataAsMap.get("city"));
+	    driver.findElement(By.id("city")).sendKeys(testDataAsMap.get("City"));
 	    driver.findElement(By.id("id_state")).click();
-	    driver.findElement(By.id("id_state")).sendKeys(testDataAsMap.get(" State"));
+	    driver.findElement(By.id("id_state")).sendKeys(testDataAsMap.get("State"));
 	    driver.findElement(By.id("postcode")).click();
 	    driver.findElement(By.id("postcode")).sendKeys(testDataAsMap.get("Zip/PostalCode"));
 	    driver.findElement(By.id("phone_mobile")).click();
 	    driver.findElement(By.id("phone_mobile")).sendKeys(testDataAsMap.get("Phone"));
 	    driver.findElement(By.id("alias")).click();
-	    driver.findElement(By.id("alias")).sendKeys(testDataAsMap.get("Email"));
+	    driver.findElement(By.id("alias")).sendKeys(testDataAsMap.get("AssignSecondAddresss"));
 	   
 	}
 
@@ -89,23 +89,20 @@ public class GMRegistrationTest {
 	@Then("^user should see their account on the dashboard$")
 	public void user_should_see_their_account_on_the_dashboard() throws Throwable {
 		String PageTitle = driver.getTitle();
-		driver.findElement(By.className("info-account")).getText();
+		System.out.println("The page title is " + PageTitle );
+		 		
+		driver.findElement(By.cssSelector(".info-account")).isDisplayed();
+		driver.findElement(By.cssSelector(".page-heading")).isDisplayed();
 		
-		try {
-			driver.findElement(By.className("page-heading")).isDisplayed();
-			String PageName = driver.findElement(By.className("page-heading")).getText();
-			System.out.println("The page name is" + PageName);			
-			System.out.println("Pass");			
-		}catch(Exception e) {
-			System.out.println("user login failed");
-			System.out.println("fail");
-			
-		}		
-              
+		driver.findElement(By.cssSelector(".page-heading")).isDisplayed();
+		
 		try {			
-			driver.findElement(By.cssSelector("info-account")).isDisplayed();
-			String printWelcomeMessage=driver.findElement(By.className("info-account")).getText();
-			System.out.println("The welcome message is " + printWelcomeMessage);
+			String printMyAccount=driver.findElement(By.cssSelector(".page-heading")).getText();
+			System.out.println("User is on " + printMyAccount + " page");
+			
+			String printWelcomeMessage=driver.findElement(By.cssSelector(".info-account")).getText();
+			System.out.println(printWelcomeMessage);
+			
 			System.out.println("Pass");			
 		}catch(Exception e) {
 			System.out.println("user login failed");
