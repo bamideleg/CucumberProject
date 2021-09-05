@@ -41,6 +41,7 @@ public class GMlogin {
 	@When("^click on submit button$")
 	public void click_on_submit_button() throws Throwable {
 		driver.findElement(By.name("SubmitLogin")).click();
+		System.out.println("user navigate to the welcome page");
 
 	}
 	@Then("^user should see the welcome message$")
