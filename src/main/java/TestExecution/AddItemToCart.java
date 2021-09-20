@@ -48,11 +48,21 @@ public class AddItemToCart {
 	
 	
 	}
-	@When("^I add items into the cart and items$")
-	public void i_add_items_into_the_cart_and_items() throws Throwable {	
-	    driver.findElement(By.xpath("//span[contains(.,'Add to cart')]")).click();
-		driver.findElement(By.linkText("Proceed to checkout")).click();
-//		driver.findElement(By.linkText("Continue shopping")).click();
+	@When("^I add items into the cart and validate the highest price$")
+	public void i_add_items_into_the_cart_and_validate_the_highest_price() throws Throwable {	
+                driver.findElement(By.cssSelector(".price.product-price")).isDisplayed();
+	        String highestprice =driver.findElement(By.xpath("//li/div/div/span")).getText();
+	        System.out.println(highestprice);
+
+                List<WebElement> values=driver.findElements(By.xpath("//li/div/div/span"));
+	         for(int i=0;i<values.size();i++)  {  
+			String value = values.get(i).getText();	 
+		        System.out.println(value); // Display all the price for the products found
+
+                        driver.findElement(By.xpath("//span[contains(.,'Add to cart')]")).click();
+		        driver.findElement(By.linkText("Proceed to checkout")).click();
+				        
+				        
 			
 	}
 	@Then("^items count should be displayed in the Cart$")
