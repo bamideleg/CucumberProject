@@ -7,4 +7,5 @@ git pull origin master
 git commit -m "blablabla"(commit  a code) 
 it checkout -b 
 git log
+git checkout main
 
