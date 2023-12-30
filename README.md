@@ -6,3 +6,5 @@ git push origin master
 git pull origin master
 git commit -m "blablabla"(commit  a code) 
 
+git log
+
