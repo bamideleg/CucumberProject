@@ -5,6 +5,6 @@ git push --all origin or git push --all --set-upstream origin (f you want to set
 git push origin master
 git pull origin master
 git commit -m "blablabla"(commit  a code) 
-
+it checkout -b 
 git log
 
