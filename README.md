@@ -8,4 +8,5 @@ git commit -m "blablabla"(commit  a code)
 it checkout -b 
 git log
 git checkout main
-
+git diff(To view changes in Local and the main just pulled)
+git reset - To unstage (remove) all files that have not been committed:
